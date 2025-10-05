@@ -8,7 +8,7 @@ interface MachineProps {
 export const Machine = ({ isProcessing, isTransforming }: MachineProps) => {
   return (
     <motion.div 
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      className="relative"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}

@@ -33,29 +33,36 @@ export const LogoAnimation = () => {
       {/* Ambient glow background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
       
-      {/* Main animation container */}
-      <div className="relative w-full max-w-2xl h-[600px] flex items-center justify-center">
-        <AnimatePresence mode="sync">
-          {phase === "falling" && (
-            <FallingBalls key={`falling-${loopCount}`} />
+      {/* Main animation container - vertically aligned */}
+      <div className="relative w-full max-w-2xl h-[600px] flex flex-col items-center justify-center">
+        {/* Top: Falling balls area */}
+        <div className="relative w-full h-[150px] flex items-start justify-center">
+          <AnimatePresence mode="sync">
+            {phase === "falling" && (
+              <FallingBalls key={`falling-${loopCount}`} />
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Middle: Machine */}
+        <div className="relative w-full h-[220px] flex items-center justify-center">
+          <Machine 
+            isProcessing={phase === "processing"} 
+            isTransforming={phase === "transforming"}
+          />
+          
+          {/* Transformation effects (centered on machine) */}
+          {phase === "transforming" && (
+            <TransformationEffect key={`transform-${loopCount}`} />
           )}
-        </AnimatePresence>
+        </div>
 
-        {/* Machine - always visible but changes state */}
-        <Machine 
-          isProcessing={phase === "processing"} 
-          isTransforming={phase === "transforming"}
-        />
-
-        {/* Transformation effects */}
-        {phase === "transforming" && (
-          <TransformationEffect key={`transform-${loopCount}`} />
-        )}
-
-        {/* Final logo reveal */}
-        {phase === "revealed" && (
-          <FinalLogo key={`logo-${loopCount}`} />
-        )}
+        {/* Bottom: Logo output */}
+        <div className="relative w-full h-[230px] flex items-start justify-center pt-4">
+          {phase === "revealed" && (
+            <FinalLogo key={`logo-${loopCount}`} />
+          )}
+        </div>
       </div>
 
       {/* Phase indicator (optional - can be removed for production) */}

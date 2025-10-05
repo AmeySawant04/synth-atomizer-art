@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export const FinalLogo = () => {
   return (
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div className="relative flex items-center justify-center pointer-events-none">
       {/* Particle burst background */}
       {[...Array(12)].map((_, i) => {
         const angle = (i * 30) * Math.PI / 180;

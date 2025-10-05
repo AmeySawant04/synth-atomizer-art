@@ -21,12 +21,12 @@ export const FallingBalls = () => {
             left: `calc(50% + ${ball.x}px)`,
           }}
           initial={{ 
-            y: -100, 
+            y: -60, 
             rotate: 0,
             opacity: 0,
           }}
           animate={{ 
-            y: 180,
+            y: 130,
             rotate: 720,
             opacity: [0, 1, 1],
           }}

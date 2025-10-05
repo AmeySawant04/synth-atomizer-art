@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export const TransformationEffect = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+    <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-10">
       {/* Light streaks morphing into @ shape */}
       {[...Array(12)].map((_, i) => {
         const angle = (i * 30) * Math.PI / 180;
