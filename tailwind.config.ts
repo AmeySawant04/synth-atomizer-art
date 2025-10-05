@@ -80,10 +80,81 @@ export default {
             height: "0",
           },
         },
+        "fall": {
+          "0%": {
+            transform: "translateY(-100px) rotate(0deg)",
+            opacity: "0",
+          },
+          "10%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translateY(0) rotate(720deg)",
+            opacity: "1",
+          },
+        },
+        "bounce-in": {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(0.9)",
+          },
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
+        "glow-pulse": {
+          "0%, 100%": {
+            opacity: "0.5",
+            filter: "brightness(1)",
+          },
+          "50%": {
+            opacity: "1",
+            filter: "brightness(1.5)",
+          },
+        },
+        "logo-reveal": {
+          "0%": {
+            transform: "scale(0.8)",
+            opacity: "0",
+          },
+          "60%": {
+            transform: "scale(1.1)",
+          },
+          "100%": {
+            transform: "scale(1)",
+            opacity: "1",
+          },
+        },
+        "shine": {
+          "0%": {
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
+        "particle-burst": {
+          "0%": {
+            transform: "scale(0) translate(0, 0)",
+            opacity: "1",
+          },
+          "100%": {
+            transform: "scale(1) translate(var(--tx), var(--ty))",
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fall": "fall 0.5s ease-in forwards",
+        "bounce-in": "bounce-in 0.3s ease-out",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "logo-reveal": "logo-reveal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
+        "shine": "shine 1.5s ease-in-out",
+        "particle-burst": "particle-burst 0.8s ease-out forwards",
       },
     },
   },
