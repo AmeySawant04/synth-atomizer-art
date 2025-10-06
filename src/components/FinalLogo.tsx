@@ -38,9 +38,9 @@ export const FinalLogo = () => {
         );
       })}
 
-      {/* Main SsP logo */}
+      {/* Main SsP logo - letters appearing sequentially */}
       <motion.div
-        className="relative z-10"
+        className="relative z-10 flex items-center justify-center gap-2"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ 
           scale: [0.8, 1.1, 1],
@@ -51,17 +51,46 @@ export const FinalLogo = () => {
           ease: [0.34, 1.56, 0.64, 1], // Bounce effect
         }}
       >
+        {/* First S */}
         <motion.div
           className="text-8xl font-bold bg-gradient-to-br from-[hsl(var(--logo-gradient-start))] to-[hsl(var(--logo-gradient-end))] bg-clip-text text-transparent"
           style={{
             fontFamily: 'system-ui, -apple-system, sans-serif',
             letterSpacing: '0.05em',
           }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 20, scale: 0.5 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.4, delay: 0, ease: "easeOut" }}
         >
-          SsP
+          S
+        </motion.div>
+
+        {/* Second s */}
+        <motion.div
+          className="text-8xl font-bold bg-gradient-to-br from-[hsl(var(--logo-gradient-start))] to-[hsl(var(--logo-gradient-end))] bg-clip-text text-transparent"
+          style={{
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            letterSpacing: '0.05em',
+          }}
+          initial={{ opacity: 0, y: 20, scale: 0.5 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.4, delay: 0.25, ease: "easeOut" }}
+        >
+          s
+        </motion.div>
+
+        {/* P */}
+        <motion.div
+          className="text-8xl font-bold bg-gradient-to-br from-[hsl(var(--logo-gradient-start))] to-[hsl(var(--logo-gradient-end))] bg-clip-text text-transparent"
+          style={{
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            letterSpacing: '0.05em',
+          }}
+          initial={{ opacity: 0, y: 20, scale: 0.5 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
+        >
+          P
         </motion.div>
 
         {/* Shine effect overlay */}
@@ -69,13 +98,13 @@ export const FinalLogo = () => {
           className="absolute inset-0 overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1, 0] }}
-          transition={{ duration: 1.5, delay: 0.5 }}
+          transition={{ duration: 1.5, delay: 0.8 }}
         >
           <motion.div
             className="absolute inset-0 w-8 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
             initial={{ x: "-100%" }}
             animate={{ x: "300%" }}
-            transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
+            transition={{ duration: 1.5, delay: 0.8, ease: "easeInOut" }}
           />
         </motion.div>
       </motion.div>
