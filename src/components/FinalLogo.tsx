@@ -38,7 +38,7 @@ export const FinalLogo = () => {
         );
       })}
 
-      {/* Main @ logo */}
+      {/* Main SsP logo */}
       <motion.div
         className="relative z-10"
         initial={{ scale: 0.8, opacity: 0 }}
@@ -51,53 +51,18 @@ export const FinalLogo = () => {
           ease: [0.34, 1.56, 0.64, 1], // Bounce effect
         }}
       >
-        <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
-          {/* Outer circle */}
-          <motion.circle
-            cx="80"
-            cy="80"
-            r="55"
-            stroke="url(#logoGradient)"
-            strokeWidth="8"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          />
-
-          {/* Inner circle */}
-          <motion.circle
-            cx="80"
-            cy="80"
-            r="25"
-            stroke="url(#logoGradient)"
-            strokeWidth="8"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          />
-
-          {/* Vertical bar of @ */}
-          <motion.path
-            d="M 105 80 L 105 115 Q 105 125 95 125"
-            stroke="url(#logoGradient)"
-            strokeWidth="8"
-            strokeLinecap="round"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
-          />
-
-          {/* Gradient definition */}
-          <defs>
-            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(var(--logo-gradient-start))" />
-              <stop offset="100%" stopColor="hsl(var(--logo-gradient-end))" />
-            </linearGradient>
-          </defs>
-        </svg>
+        <motion.div
+          className="text-8xl font-bold bg-gradient-to-br from-[hsl(var(--logo-gradient-start))] to-[hsl(var(--logo-gradient-end))] bg-clip-text text-transparent"
+          style={{
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            letterSpacing: '0.05em',
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          SsP
+        </motion.div>
 
         {/* Shine effect overlay */}
         <motion.div
